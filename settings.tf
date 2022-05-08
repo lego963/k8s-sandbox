@@ -14,5 +14,5 @@ terraform {
 }
 
 provider "opentelekomcloud" {
-  cloud = "tf"
+  cloud = var.cloud
 }

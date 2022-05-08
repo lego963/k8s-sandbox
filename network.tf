@@ -6,6 +6,7 @@ resource "opentelekomcloud_vpc_v1" "this" {
   name   = "${var.project}-vpc"
   cidr   = var.vpc_cidr
   shared = true
+  tags   = var.tags
 }
 
 resource "opentelekomcloud_vpc_subnet_v1" "this" {
@@ -16,6 +17,8 @@ resource "opentelekomcloud_vpc_subnet_v1" "this" {
   gateway_ip = cidrhost(local.subnet_cidr, 1)
 
   dns_list = ["100.125.4.25", "1.1.1.1"]
+
+  tags = var.tags
 }
 
 resource "opentelekomcloud_vpc_eip_v1" "this" {
@@ -28,4 +31,5 @@ resource "opentelekomcloud_vpc_eip_v1" "this" {
     size       = 100
     share_type = "PER"
   }
+  tags = var.tags
 }
