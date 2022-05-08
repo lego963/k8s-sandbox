@@ -16,6 +16,12 @@ variable "cce_flavor" {
   default     = "cce.s1.small"
 }
 
+variable "node_flavor" {
+  type        = string
+  description = "Flavor for CCE cluster nodes"
+  default     = "s2.large.2"
+}
+
 variable "cloud" {
   type        = string
   description = "Name of the cloud in the clouds.yaml file"
