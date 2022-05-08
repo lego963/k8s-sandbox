@@ -4,6 +4,7 @@ resource "opentelekomcloud_cce_cluster_v3" "this" {
 
   cluster_type = "VirtualMachine"
   flavor_id    = var.cce_flavor
+  eip          = opentelekomcloud_vpc_eip_v1.this.publicip[0].ip_address
 
   vpc_id                 = opentelekomcloud_vpc_v1.this.id
   subnet_id              = opentelekomcloud_vpc_subnet_v1.this.network_id

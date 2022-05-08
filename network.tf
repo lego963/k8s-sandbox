@@ -18,3 +18,14 @@ resource "opentelekomcloud_vpc_subnet_v1" "this" {
   dns_list = ["100.125.4.25", "1.1.1.1"]
 }
 
+resource "opentelekomcloud_vpc_eip_v1" "this" {
+  publicip {
+    type = "5_bgp"
+  }
+
+  bandwidth {
+    name       = "${var.project}-bandwidth"
+    size       = 100
+    share_type = "PER"
+  }
+}
