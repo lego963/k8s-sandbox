@@ -6,6 +6,10 @@ terraform {
       source  = "opentelekomcloud/opentelekomcloud"
       version = ">= 1.23.9"
     }
+
+    local = {
+      version = ">=2.0.0"
+    }
   }
 }
 
